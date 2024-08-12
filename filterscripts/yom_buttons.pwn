@@ -179,7 +179,7 @@ Float:Angle2D(const Float:PointA[], const Float:PointB[])
 
 
 /*----------------------------------------------------------------------------*/
-GetClosestButton(const Float:Point[], &Float:Distance = 0.0)
+Float:Distance3D(const Float:PointA[], const Float:PointB[], bool:sqrt = true)
 {
 	new Closest = INVALID_BUTTON_ID, Float:Distance2 = 100000.0;
 
