@@ -13,7 +13,8 @@
     },
     "chat_input_filter": true,
     "discord": {
-        "invite": ""
+        "invite": "discord.gg/samp",
+	"bot_token": "BOT_TOKEN"
     },
     "enable_query": true,
     "exclude": [
