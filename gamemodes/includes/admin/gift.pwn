@@ -3241,7 +3241,7 @@ GiftPlayer(playerid, giveplayerid, gtype = 2) // Default is the normal giftbox
 
 GetDynamicGiftBoxType(value)
 {
-	new string[128];
+	new string[48];
 	if(value == 0)
 		format(string, sizeof(string), "Less Common");
 	else if(value == 1)
