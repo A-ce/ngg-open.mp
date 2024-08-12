@@ -116,25 +116,26 @@ StaffAccountCheck(playerid, ip[])
 
 GetStaffRank(playerid)
 {
+	new rank[64];
 	if(PlayerInfo[playerid][pSEC] > 0)
 	{
 		switch(PlayerInfo[playerid][pSEC])
 		{
-			case 1: szMiscArray = "{00FA9A}Regular Coordinator{FFFFFF}";
-			case 2: szMiscArray = "{00FA9A}Senior Coordinator{FFFFFF}";
-			case 3: szMiscArray = "{00FA9A}Assistant Chairman{FFFFFF}";
-			case 4: szMiscArray = "{00FA9A}Deputy Chairman{FFFFFF}";
-			case 5: szMiscArray = "{00FA9A}Chairman{FFFFFF}";
+			case 1: rank = "{00FA9A}Regular Coordinator{FFFFFF}";
+			case 2: rank = "{00FA9A}Senior Coordinator{FFFFFF}";
+			case 3: rank = "{00FA9A}Assistant Chairman{FFFFFF}";
+			case 4: rank = "{00FA9A}Deputy Chairman{FFFFFF}";
+			case 5: rank = "{00FA9A}Chairman{FFFFFF}";
 		}
 	}
 	if(PlayerInfo[playerid][pWatchdog] > 0)
 	{
 		switch(PlayerInfo[playerid][pWatchdog])
 		{
-			case 1: szMiscArray = "{2267F0}Watchdog{FFFFFF}";
-			case 2: szMiscArray = "{2267F0}Senior Watchdog{FFFFFF}";
-			case 3: szMiscArray = "{2267F0}RP Specialist{FFFFFF}";
-			case 4: szMiscArray = "{2267F0}Director of RP Improvement{FFFFFF}";
+			case 1: rank = "{2267F0}Watchdog{FFFFFF}";
+			case 2: rank = "{2267F0}Senior Watchdog{FFFFFF}";
+			case 3: rank = "{2267F0}RP Specialist{FFFFFF}";
+			case 4: rank = "{2267F0}Director of RP Improvement{FFFFFF}";
 		}
 	}
 
@@ -142,10 +143,10 @@ GetStaffRank(playerid)
 	{
 		switch(PlayerInfo[playerid][pHelper])
 		{
-			case 1: szMiscArray = "{6495ED}Helper{FFFFFF}";
-			case 2: szMiscArray = "{00FFFF}Community Advisor{FFFFFF}";
-			case 3: szMiscArray = "{00FFFF}Senior Advisor{FFFFFF}";
-			case 4: szMiscArray = "{00FFFF}Chief Advisor{FFFFFF}";
+			case 1: rank = "{6495ED}Helper{FFFFFF}";
+			case 2: rank = "{00FFFF}Community Advisor{FFFFFF}";
+			case 3: rank = "{00FFFF}Senior Advisor{FFFFFF}";
+			case 4: rank = "{00FFFF}Chief Advisor{FFFFFF}";
 		}
 	}
 
@@ -153,23 +154,23 @@ GetStaffRank(playerid)
 	{
 		switch(PlayerInfo[playerid][pSMod])
 		{
-			case 0: szMiscArray = "{FFFF00}Server Moderator{FFFFFF}";
-			case 1: szMiscArray = "{FFFF00}Senior Server Moderator{FFFFFF}";
+			case 0: rank = "{FFFF00}Server Moderator{FFFFFF}";
+			case 1: rank = "{FFFF00}Senior Server Moderator{FFFFFF}";
 		}
 	}
 	if(PlayerInfo[playerid][pAdmin] > 1)
 	{
 		switch(PlayerInfo[playerid][pAdmin])
 		{
-			case 2: szMiscArray = "{00FF00}Junior Administrator{FFFFFF}";
-			case 3: szMiscArray = "{00FF00}General Administrator{FFFFFF}";
-			case 4: szMiscArray = "{F4A460}Senior Administrator{FFFFFF}";
-			case 1337: szMiscArray = "{FF0000}Head Administrator{FFFFFF}";
-			case 99999: szMiscArray = "{298EFF}Executive Administrator{FFFFFF}";
-			default: format(szMiscArray, sizeof(szMiscArray), "Undefined Administrator (%d)", PlayerInfo[playerid][pAdmin]);
+			case 2: rank = "{00FF00}Junior Administrator{FFFFFF}";
+			case 3: rank = "{00FF00}General Administrator{FFFFFF}";
+			case 4: rank = "{F4A460}Senior Administrator{FFFFFF}";
+			case 1337: rank = "{FF0000}Head Administrator{FFFFFF}";
+			case 99999: rank = "{298EFF}Executive Administrator{FFFFFF}";
+			default: format(rank, sizeof(rank), "Undefined Administrator (%d)", PlayerInfo[playerid][pAdmin]);
 		}
 	}
-	return szMiscArray;
+	return rank;
 }
 
 CMD:resetvw(playerid, params[])
