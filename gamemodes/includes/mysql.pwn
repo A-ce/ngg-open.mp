@@ -32,7 +32,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-SQLUpdateBuild(query[], const table[], sqlplayerid)
+SQLUpdateBuild(const query[], const table[], sqlplayerid)
 {
 	new querylen = strlen(query);
 	if (!query[0]) {
@@ -50,7 +50,7 @@ SQLUpdateBuild(query[], const table[], sqlplayerid)
 	return 1;
 }
 
-SQLUpdateFinish(query[], const table[], sqlplayerid)
+SQLUpdateFinish(const query[], const table[], sqlplayerid)
 {
 	if (strcmp(query, "WHERE id=", false) == 0) mysql_tquery(MainPipeline, query, "OnQueryFinish", "i", SENDDATA_THREAD);
 	else
@@ -64,7 +64,7 @@ SQLUpdateFinish(query[], const table[], sqlplayerid)
 	return 1;
 }
 
-SaveInteger(query[], const table[], sqlid, const Value[], Integer)
+SaveInteger(const query[], const table[], sqlid, const Value[], Integer)
 {
 	SQLUpdateBuild(query, table, sqlid);
 	new updval[64];
@@ -74,7 +74,7 @@ SaveInteger(query[], const table[], sqlid, const Value[], Integer)
 }
 
 
-SaveString(query[], const table[], sqlid, const Value[], const String[])
+SaveString(const query[], const table[], sqlid, const Value[], const String[])
 {
 	SQLUpdateBuild(query, table, sqlid);
 	new escapedstring[160], string[160];
@@ -84,7 +84,7 @@ SaveString(query[], const table[], sqlid, const Value[], const String[])
 	return 1;
 }
 
-SaveFloat(query[], const table[], sqlid, const Value[], Float:Number)
+SaveFloat(const query[], const table[], sqlid, const Value[], Float:Number)
 {
 	new flotostr[32];
 	format(flotostr, sizeof(flotostr), "%0.2f", Number);
@@ -1702,7 +1702,7 @@ SystemBan(Player, const Reason[])
 }
 
 
-MySQLBan(userid,const ip[],const reason[],status,const admin[])
+MySQLBan(userid, const ip[], const reason[], status, const admin[])
 {
 	new string[256];
     mysql_format(MainPipeline, string, sizeof(string), "INSERT INTO `bans` (`user_id`, `ip_address`, `reason`, `date_added`, `status`, `admin`) VALUES ('%d','%s','%e', NOW(), '%d','%e')", userid, ip, reason, status, admin);
@@ -2116,7 +2116,7 @@ MySQLUpdateBuild(query[], sqlplayerid)
 	return 1;
 }
 
-MySQLUpdateFinish(query[], sqlplayerid)
+MySQLUpdateFinish(const query[], sqlplayerid)
 {
 	if (strcmp(query, "WHERE id=", false) == 0) mysql_tquery(MainPipeline, query, "OnQueryFinish", "i", SENDDATA_THREAD);
 	else
@@ -2130,7 +2130,7 @@ MySQLUpdateFinish(query[], sqlplayerid)
 	return 1;
 }
 
-SavePlayerInteger(query[], sqlid, const Value[], Integer)
+SavePlayerInteger(const query[], sqlid, const Value[], Integer)
 {
 	MySQLUpdateBuild(query, sqlid);
 	new updval[64];
@@ -2140,7 +2140,7 @@ SavePlayerInteger(query[], sqlid, const Value[], Integer)
 }
 
 
-SavePlayerString(query[], sqlid, const Value[], const String[])
+SavePlayerString(const query[], sqlid, const Value[], const String[])
 {
 	MySQLUpdateBuild(query, sqlid);
 	new escapedstring[160], string[160];
@@ -2150,7 +2150,7 @@ SavePlayerString(query[], sqlid, const Value[], const String[])
 	return 1;
 }
 
-SavePlayerFloat(query[], sqlid, const Value[], Float:Number)
+SavePlayerFloat(const query[], sqlid, const Value[], Float:Number)
 {
 	new flotostr[32];
 	mysql_format(MainPipeline, flotostr, sizeof(flotostr), "%0.2f", Number);

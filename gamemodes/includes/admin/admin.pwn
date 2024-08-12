@@ -96,6 +96,7 @@ Player_KillCheckPoint(playerid) {
 
 GetAdminRankName(i)
 {
+	new rank[64];
 	switch(i)
 	{
 		case 2: rank = "Junior Administrator";
