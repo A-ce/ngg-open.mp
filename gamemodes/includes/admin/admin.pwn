@@ -98,14 +98,14 @@ GetAdminRankName(i)
 {
 	switch(i)
 	{
-		case 2: format(szMiscArray, sizeof(szMiscArray), "Junior Administrator");
-		case 3: format(szMiscArray, sizeof(szMiscArray), "General Administrator");
-		case 4: format(szMiscArray, sizeof(szMiscArray), "Senior Administrator");
-		case 1337: format(szMiscArray, sizeof(szMiscArray), "Head Administrator");
-		case 99999: format(szMiscArray, sizeof(szMiscArray), "Executive Administrator");
-		default: format(szMiscArray, sizeof(szMiscArray), "Undefined Administrator (%i)", i);
+		case 2: rank = "Junior Administrator";
+		case 3: rank = "General Administrator";
+		case 4: rank = "Senior Administrator";
+		case 1337: rank = "Head Administrator";
+		case 99999: rank = "Executive Administrator";
+		default: format(rank, sizeof(rank), "Undefined Administrator (%i)", i);
 	}
-	return szMiscArray;
+	return rank;
 }
 
 StaffAccountCheck(playerid, ip[])
