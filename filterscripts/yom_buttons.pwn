@@ -85,20 +85,15 @@
 
 /*############################################################################*/
 
-
-
-
-
 #define YSI_NO_HEAP_MALLOC
 #define YSI_NO_MODE_CACHE
 #define YSI_NO_OPTIMISATION_MESSAGE
 #define YSI_NO_VERSION_CHECK
 
-
-
-
 /*----------------------------------------------------------------------------*/
 #include <open.mp>
+#undef  MAX_PLAYERS
+#define MAX_PLAYERS (500)
 #include <streamer>
 #include <YSI_Data/y_iterate>
 
