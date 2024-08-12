@@ -34,13 +34,6 @@
  
  //--------------------------------[ INITIATE/EXIT ]---------------------------
 
-hook OnGameModeInit()
-{
-	DCC_Connect("discord_token");
-	print("[DCC] Connecting to Discord...");
-	return 1;
-}
-
 SendDiscordMessage(channel, message[])
 {
 	if(betaserver == 0) {
