@@ -619,7 +619,7 @@ task ProductionUpdate[300000]()
 task MoneyUpdate[1000]()
 {
 	new minuitet=minuite;
-	gettime(hour, minuite, seconid);
+	gettime(hour_,minuite,second_);
 	FixHour(hour_);
 	hour_ = shifthour;
 
