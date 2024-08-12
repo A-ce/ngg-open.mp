@@ -100,9 +100,7 @@
 #include <YSI_Coding\y_va>
 #include <mSelection>
 #include <gvar>
-#if defined DISCORD_ENABLED
-	#include <discord-connector>
-#endif
+#include <discord-connector>
 #include <geo_ip>
 #include <easyDialog>
 #include <callbacks>
