@@ -1,8 +1,5 @@
 // Furniture System - Empty Interiors 30 meters above the original (by Jingles)
 
-#define FILTERSCRIPT
-#define MAX_PLAYERS 500
-
 #include <open.mp>
 #include <streamer>
 
