@@ -1,8 +1,11 @@
-#define FILTERSCRIPT
-#define MAX_PLAYERS 500
+#define YSI_NO_HEAP_MALLOC
+#define YSI_NO_MODE_CACHE
+#define YSI_NO_OPTIMISATION_MESSAGE
+#define YSI_NO_VERSION_CHECK
 
 #include <open.mp>
 #include <streamer>
+#include <YSI_Data\y_iterate>
 
 public OnFilterScriptInit()
 {
@@ -2295,8 +2298,9 @@ public OnFilterScriptInit()
 
 public OnFilterScriptExit()
 {
-	for(new i; i < MAX_PLAYERS; i++)
+	foreach(new i : Player)
 	{
 		if(GetPlayerVirtualWorld(i) != 0 || GetPlayerInterior(i) != 0) TogglePlayerControllable(i, false);
 	}
+	return 1;
 }
