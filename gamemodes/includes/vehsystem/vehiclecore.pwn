@@ -1819,8 +1819,8 @@ CMD:car(playerid, params[])
 	{
 		new bool:engine,vehicleid;
 		vehicleid = GetPlayerVehicleID(playerid);
-		if(GetVehicleModel(vehicleid) == 481 || GetVehicleModel(vehicleid) == 509 || GetVehicleModel(vehicleid) == 510 || DynVeh[vehicleid] != -1 && DynVehicleInfo[DynVeh[vehicleid]][gv_iType] == 1 && GetVehicleModel(vehicleid) == 592) return SendClientMessageEx(playerid,COLOR_WHITE,"This command can't be used in this vehicle.");
-		if(WheelClamp{vehicleid}) return SendClientMessageEx(playerid,COLOR_WHITE,"(( This vehicle has a wheel camp on its front tire, you will not be able to drive away with it. ))");
+		if(GetVehicleModel(vehicleid) == 481 || GetVehicleModel(vehicleid) == 509 || GetVehicleModel(vehicleid) == 510 || DynVeh[vehicleid] != -1 && DynVehicleInfo[DynVeh[vehicleid]][gv_iType] == 1 && GetVehicleModel(vehicleid) == 592) return SendClientMessageEx(playerid, COLOR_WHITE, "This command can't be used in this vehicle.");
+		if(WheelClamp{vehicleid}) return SendClientMessageEx(playerid, COLOR_WHITE, "(( This vehicle has a wheel camp on its front tire, you will not be able to drive away with it. ))");
 
 		GetVehicleParamsEx(vehicleid,engine);
 		if(engine == VEHICLE_PARAMS_ON)
