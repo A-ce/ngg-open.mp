@@ -79,12 +79,19 @@
 // Used for chat text messages
 #define COLOR_MESSAGE_YELLOW        0xFFDD00AA
 
+#define YSI_NO_HEAP_MALLOC
+#define YSI_NO_MODE_CACHE
+#define YSI_NO_OPTIMISATION_MESSAGE
+#define YSI_NO_VERSION_CHECK
+
 // -----------------------------------------------------------------------------
 // Includes
 // --------
 
 // open.mp include
 #include <open.mp>
+#include <YSI_Data/y_iterate>
+
 
 // For PlaySoundForPlayersInRange()
 #include "../include/gl_common.inc"
